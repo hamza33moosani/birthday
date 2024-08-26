@@ -1,0 +1,60 @@
+<div class="main" [ngStyle]="{ 
+    'background-image': 'url(' + src + ')', 
+    'background-size': 'cover', 
+    'background-repeat': 'no-repeat', 
+    'background-position': 'center' ,
+    'cursor':'url('+icon+'),auto'
+}">
+<div class="birthday-container">
+    <h1 [ngStyle]="{'color': isSkyBlue ? 'navy' : (brown ? '#94624B' : 'black')}">
+        HELLLOOO YUSRA HAPPPY BIRTHDAY
+    </h1>
+    <p [ngStyle]="{'color': isSkyBlue ? 'navy' : (brown ? '#94624B' : 'black')}">Wishing you a day filled with love, joy, and lots of cake! 🎂</p>
+    <div class="balloons">
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+    </div>
+</div>
+<div class="flexing" >
+    <div class="text" [ngStyle]="{'color': isSkyBlue ? 'navy' : (brown ? '#94624B' : 'black')
+}">
+        
+        <h3>
+            Since you didnt tell me what you like more you can choose either as your back drop
+        </h3>
+        <div class="buttons">
+            <button mat-button (click)="displayImage('cat')">
+                <img src="assets/images/cat_big.png" alt="Button Image" style="height: 70px; width: 70px;">
+              </button>                  
+            <button mat-button (click)="displayImage('pony')">
+            <img src="assets/images/pony.png" alt="Button Image" style="height: 70px; width: 70px;">
+            </button>                  
+            <button mat-button (click)="displayImage('dino')">
+                <img src="assets/images/dino_icon.png" alt="Button Image" style="height: 70px; width: 70px;">
+                </button>             
+        </div>
+        <h3>
+           Now choose which icon you want as your mouse icon
+        </h3>
+        <div class="buttons">
+            <button mat-button (click)="displayIcon('cat')">
+                <img src="assets/images/cat_big.png" alt="Button Image" style="height: 70px; width: 70px;">
+              </button>                  
+            <button mat-button (click)="displayIcon('pony')">
+            <img src="assets/images/pony.png" alt="Button Image" style="height: 70px; width: 70px;">
+            </button>                  
+            <button mat-button (click)="displayIcon('dino')">
+                <img src="assets/images/dino_icon.png" alt="Button Image" style="height: 70px; width: 70px;">
+                </button>         
+                
+        </div>
+    </div>
+    <button mat-button (click)="route()">
+        Proceed further 
+        </button>       
+    
+</div>
+
+
+</div>

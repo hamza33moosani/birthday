@@ -1,0 +1,39 @@
+.main {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color:#ff69b4c5!important;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .letter-container {
+    background-color: #ffffff;
+    padding: 50px;
+    width: 100%;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-size: cover;
+    height: 47%;
+  }
+  
+  .letter-content {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #333;
+    font-family: 'Indie Flower', cursive; /* Google Font for handwritten style */
+  }
+  
+  .letter-content h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #555;
+  }
+  
+  .letter-content p {
+    margin: 0;
+  }
+  

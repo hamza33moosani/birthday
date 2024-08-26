@@ -1,0 +1,99 @@
+<!-- HELLLLO YUSRA WELLCOME TO THE YUSRA QUIZ 
+BUT ARE U THE REAL YUSRA 
+
+Only the real Yusra would know what your fav show is 
+1. Promise neverland 
+2.You 
+3.My lil pony
+4.Wednesday  -->
+<div class="main" [ngStyle]="{ 
+    'background-image': 'url(' + src + ')', 
+    'background-repeat': 'no-repeat', 
+    'background-position': 'fixed' ,
+    'cursor':'url('+icon+'),auto',
+    'color':color
+}">
+    <div class="heading">
+        <h1>
+            HELLLLO YUSRA WELLCOME TO THE YUSRA QUIZ 
+            BUT ARE U THE REAL YUSRA 
+        </h1>
+    </div>
+    <div class="correct_num">
+        <mat-icon>favorite</mat-icon>
+        <span class="icon_number"> {{correct_count}}</span>
+      
+    </div>
+    <div class="container">
+        <div class="quiz-question">
+                <h2>Only the real Yusra would know what your fav show is</h2>
+            <div class="quiz-options" *ngFor="let option of intial_options;index as i">
+                <button class="quiz-option"  (click)="buttonClicked(option ,i+1)" [ngClass]="{'active':(i+1)===buttonId}" [disabled]="correct">
+                    {{option}}
+                </button>
+                
+            </div>
+            <button class="submit-btn" (click)="answer()">Submit</button>
+            <div *ngIf="correct">
+                <h4>
+                    YOU ARE MY YUSRA AFTER ALLLL
+                </h4>
+            </div>
+            <div *ngIf="incorrect">
+                <h4>
+                    BRAH GO AWAY YOUR NOT YUSRA
+                </h4>
+            </div>
+        </div>
+    </div>
+    <div class="questions" *ngIf="correct">
+        <div class="heading">
+            <h1>
+                Let us begin the Yusra Game show
+            </h1>
+        </div>
+        <div class="container" *ngFor="let question of questions">
+            <div class="quiz-question">
+                    <h2>{{question.question}}</h2>
+                <div class="quiz-options" *ngFor="let option of question.options;index as i">
+                    <button class="quiz-option"  (click)="choiceClicked(option ,question)" [ngClass]="{'active':option.active}"  [disabled]="option.disabled">
+                        <div *ngIf="option.image">
+                            <img [src]="option.imageUrl" alt="">
+                        </div>
+                        {{option.choice}}
+                    </button>
+                    
+                </div>
+                <button class="submit-btn" (click)="quiz_answers(question)">Submit</button>
+                <div *ngIf="question.iscorrect">
+                    <h4>
+                        {{question.correct_message}}
+                    </h4>
+                </div>
+                <div *ngIf="question.isincorrect">
+                    <h4>
+                        {{message.response}}
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="end">
+        <div *ngIf="correct_count==15">
+            <h3>BRAHHH I LOVEEE YOU ,literally got a perfect score insane actually </h3>
+        </div>
+        <div *ngIf="correct_count>=10  && correct_count<15">
+            <h3>OOOOOO you got a pretty decent score ,still love you  </h3>
+        </div>
+        <div *ngIf="correct_count<10">
+            <h3>HMMMM seems like you have forgotten alot </h3>
+        </div>
+        <div>
+            <H3>GET YOUR FREEE LETTTER NOW</H3>
+            <button mat-button (click)="route()">
+                Gimme Letter
+                </button>       
+            <button (click)="route()"></button>
+        </div>
+    </div>
+</div>
